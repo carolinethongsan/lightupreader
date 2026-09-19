@@ -1333,52 +1333,7 @@ body {
   .blog-subscription-row summary { min-height: 70px; }
 }
 
-/* Einmaliger, nicht-modaler Hinweis auf den Luchs. */
-.lynx-hint {
-  position: fixed;
-  right: max(1rem, env(safe-area-inset-right));
-  bottom: max(1rem, env(safe-area-inset-bottom));
-  z-index: 10;
-  display: flex;
-  align-items: flex-start;
-  width: min(310px, calc(100vw - 2rem));
-  border: 1px solid var(--line);
-  background: var(--ink);
-  color: var(--text);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity .2s ease, transform .2s ease;
-}
-.lynx-hint[hidden] { display: none; }
-.lynx-hint.is-visible { opacity: 1; transform: none; }
-.lynx-hint-link {
-  flex: 1;
-  min-width: 0;
-  padding: .8rem 0 .8rem .9rem;
-  color: inherit;
-  text-decoration: none;
-  line-height: 1.45;
-  font-size: .9rem;
-}
-.lynx-hint-link strong { display: block; margin-bottom: .25rem; color: var(--gold); }
-.lynx-hint-link span { display: block; }
-.lynx-hint-close {
-  flex: 0 0 44px;
-  min-height: 44px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-.lynx-hint a:focus-visible,
-.lynx-hint button:focus-visible { outline: 2px solid var(--gold); outline-offset: -3px; }
-.lynx-hint-close:hover { color: var(--gold); }
-@media (max-width: 540px) {
-  .lynx-hint { width: min(280px, calc(100vw - 2rem)); }
-}
+/* Native Anker berücksichtigen die Systemeinstellung für reduzierte Bewegung. */
 @media (prefers-reduced-motion: reduce) {
-  .lynx-hint { transition: none; transform: none; }
+  html { scroll-behavior: auto; }
 }
