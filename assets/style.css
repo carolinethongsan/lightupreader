@@ -1299,3 +1299,36 @@ body {
   .blog-subscription .subscription-fields { grid-template-columns: minmax(0, 1fr); }
   .blog-subscription .subscription-fields button { margin-top: 0; }
 }
+
+/* Kleine Begleitfigur neben dem Abo-Trigger, außerhalb des Klickbereichs. */
+.blog-subscription-row {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  max-width: 1040px;
+  margin: 1.25rem auto 0;
+}
+
+.blog-subscription-row .subscription-lynx {
+  display: block;
+  flex: 0 0 auto;
+  width: 100px;
+  height: auto;
+}
+
+.blog-subscription-row .blog-subscription {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.blog-subscription-row summary {
+  min-height: 91px;
+  align-content: center;
+}
+
+@media (max-width: 540px) {
+  .blog-subscription-row { gap: .5rem; }
+  .blog-subscription-row .subscription-lynx { width: 76px; }
+  .blog-subscription-row summary { min-height: 70px; }
+}
