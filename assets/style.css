@@ -1237,3 +1237,65 @@ body {
     min-height: 210px;
   }
 }
+
+/* Blog-Abonnement: Brevo-Zustände, ausschließlich innerhalb dieses Formulars. */
+.blog-subscription {
+  max-width: 1040px;
+  margin: 1.25rem auto 0;
+}
+
+.blog-subscription summary {
+  width: fit-content;
+  min-height: 44px;
+  padding: .7rem .25rem;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.blog-subscription summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.blog-subscription .sib-form-container {
+  max-width: 580px;
+  padding-top: .65rem;
+  line-height: 1.6;
+}
+
+.blog-subscription .subscription-intro { margin: 0; }
+.blog-subscription .subscription-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: .8rem;
+  align-items: start;
+}
+.blog-subscription .entry__label { display: block; margin-bottom: .4rem; }
+.blog-subscription .subscription-fields button { margin-top: 1.9rem; min-height: 48px; }
+.blog-subscription .form-note { font-size: .8rem; }
+.blog-subscription a { color: var(--gold); }
+.blog-subscription .input--hidden,
+.blog-subscription .sib-hide-loader-icon { display: none !important; }
+.blog-subscription .entry__error { display: none; color: #ffc7bc; font-size: .9rem; }
+.blog-subscription .entry_errored .input { border-color: #ffc7bc; }
+.blog-subscription .sib-form-message-panel {
+  display: none;
+  margin-bottom: 1rem;
+  padding: .7rem .85rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(255,255,255,.045);
+}
+.blog-subscription .sib-form-message-panel--active { display: block; }
+.blog-subscription #error-message { border-color: #ffc7bc; }
+.blog-subscription .progress-indicator__icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+}
+.blog-subscription button:disabled { opacity: .65; cursor: wait; }
+
+@media (max-width: 540px) {
+  .blog-subscription .subscription-fields { grid-template-columns: minmax(0, 1fr); }
+  .blog-subscription .subscription-fields button { margin-top: 0; }
+}

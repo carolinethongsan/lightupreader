@@ -593,6 +593,42 @@
 </article>
 </div>
 </div>
+<details class="blog-subscription">
+<summary>Blog abonnieren</summary>
+<div id="sib-form-container" class="sib-form-container">
+<div id="error-message" class="sib-form-message-panel" role="alert">
+<div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.</span></div>
+</div>
+<div id="success-message" class="sib-form-message-panel" role="status" aria-live="polite">
+<div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Bitte prüfe dein E-Mail-Postfach und bestätige deine Anmeldung über den Bestätigungslink.</span></div>
+</div>
+<div id="sib-container">
+<form id="sib-form" class="guestbook-form" method="POST" action="https://56c2878a.sibforms.com/serve/MUIFAL4SoLfKcQE2KR6Fgw4vn34mZtjtvwSgSsHLn_Oid-3o5zh2_YL5vmzE1XJVnGosuRsvEE0MdDAaxknNsaA0co1Te5W8_5uDSNLnVsD_qDmcWIDCVqoyYwNWeDzmuN5oXWGo27TqU6tH9FHNS_MUA6GIOSi3msW_AlNL4PmH2bNIb5mYZN86zp9nTZVgataXIP2n5Mr_Q_xHLg==" data-type="subscription">
+<p class="subscription-intro">Neue Texte von Light up Reader per E-Mail erhalten.</p>
+<div class="subscription-fields">
+<div class="sib-input sib-form-block">
+<div class="form__entry entry_block">
+<div class="form__label-row">
+<label class="entry__label" for="EMAIL">E-Mail-Adresse</label>
+<div class="entry__field">
+<input class="input" type="text" id="EMAIL" name="EMAIL" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" data-required="true" required aria-describedby="subscription-email-error subscription-note"/>
+</div>
+</div>
+<span id="subscription-email-error" class="entry__error entry__error--primary" aria-live="polite"></span>
+</div>
+</div>
+<button class="sib-form-block__button sib-form-block__button-with-loader" type="submit" form="sib-form">
+<svg class="progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 1 10 10h-2a8 8 0 0 0-8-8z"/></svg>
+Abonnieren
+</button>
+</div>
+<input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" aria-hidden="true" autocomplete="off"/>
+<input type="hidden" name="locale" value="de"/>
+<p class="form-note" id="subscription-note">Nach der Anmeldung erhältst du eine E-Mail zur Bestätigung. Abmeldung jederzeit möglich. <a href="#datenschutz">Datenschutz</a></p>
+</form>
+</div>
+</div>
+</details>
 </section>
 <section class="legal-section deep" id="datenschutz">
 <div class="legal-inner">
@@ -652,5 +688,41 @@
     moveTo(active || points[0]);
   })();
 </script>
+<script>
+// Brevo-Konfiguration; Versand und Bestätigung bleiben beim bestehenden Formular.
+window.REQUIRED_CODE_ERROR_MESSAGE = 'Wähle bitte einen Ländervorwahl aus.';
+window.LOCALE = 'de';
+
+window.EMAIL_INVALID_MESSAGE =
+window.SMS_INVALID_MESSAGE =
+"Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+
+window.REQUIRED_ERROR_MESSAGE =
+"Dieses Feld darf nicht leer sein. ";
+
+window.GENERIC_INVALID_MESSAGE =
+"Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+
+window.INVALID_NUMBER =
+"Die eingegebenen Informationen sind nicht gültig. Bitte überprüfe das Feldformat und versuche es erneut.";
+
+window.INVALID_DATE =
+"Bitte gib ein gültiges Datum ein";
+
+window.REQUIRED_MULTISELECT_MESSAGE =
+'Wähle bitte mindestens eine Option aus';
+
+window.translation = {
+  common: {
+    selectedList: '{quantity} Liste ausgewählt',
+    selectedLists: '{quantity} Listen ausgewählt',
+    selectedOption: '{quantity} ausgewählt',
+    selectedOptions: '{quantity} ausgewählt',
+  }
+};
+
+var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
