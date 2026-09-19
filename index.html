@@ -593,7 +593,7 @@
 </article>
 </div>
 </div>
-<div class="blog-subscription-row">
+<div class="blog-subscription-row" id="luchs-abo">
 <img class="subscription-lynx" src="assets/luchs.png" alt="Luchs" width="1312" height="1199"/>
 <details class="blog-subscription">
 <summary>Blog abonnieren</summary>
@@ -727,5 +727,42 @@ window.translation = {
 var AUTOHIDE = Boolean(0);
 </script>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<aside class="lynx-hint" id="lynx-hint" aria-label="Luchs entdecken" hidden>
+<a class="lynx-hint-link" href="#luchs-abo"><strong>Finde den Luchs</strong><span>Irgendwo auf Light up Reader hat er sich versteckt.</span></a>
+<button class="lynx-hint-close" type="button" aria-label="Hinweis schließen">×</button>
+</aside>
+<script>
+(function () {
+  const hint = document.getElementById('lynx-hint');
+  const target = document.getElementById('luchs-abo');
+  const key = 'lightUpReaderLynxHintSeen';
+  if (!hint || !target) return;
+  try {
+    if (localStorage.getItem(key)) return;
+  } catch (_) { /* Der Hinweis funktioniert auch ohne verfügbaren Speicher. */ }
+
+  function dismiss() {
+    hint.hidden = true;
+    try { localStorage.setItem(key, '1'); } catch (_) {}
+  }
+
+  hint.querySelector('.lynx-hint-close').addEventListener('click', dismiss);
+  hint.querySelector('.lynx-hint-link').addEventListener('click', function (event) {
+    event.preventDefault();
+    dismiss();
+    target.querySelector('summary').focus({ preventScroll: true });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // "instant" überschreibt auch das vorhandene globale scroll-behavior: smooth.
+    target.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'center' });
+  });
+
+  window.setTimeout(function () {
+    hint.hidden = false;
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () { hint.classList.add('is-visible'); });
+    });
+  }, 1500);
+})();
+</script>
 </body>
 </html>
