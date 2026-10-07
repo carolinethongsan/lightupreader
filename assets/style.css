@@ -1358,3 +1358,17 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Standalone article details reuse the essay layout. */
+.article-detail .essay-header h1 {
+  margin: .2rem 0 .8rem;
+  font-weight: normal;
+  font-size: clamp(2rem, 5.5vw, 4.6rem);
+  line-height: 1.06;
+}
+
+.article-detail .article-hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
