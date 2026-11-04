@@ -365,6 +365,16 @@ body {
   transition: transform .45s ease;
 }
 
+/* Die Kanarienvogel-Karte behält auch bei einem Bildladefehler ihre Bildfläche. */
+.canary-card .article-card-image { position: relative; }
+
+.canary-card .article-card-image img {
+  position: absolute;
+  inset: 0;
+  font-size: .875rem;
+  line-height: 1.4;
+}
+
 .article-card:hover img { transform: scale(1.035); }
 
 .article-card-placeholder {
