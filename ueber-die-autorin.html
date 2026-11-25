@@ -7,6 +7,21 @@
 <title>Über die Autorin – Light up Reader</title>
 <link href="assets/style.css" rel="stylesheet"/>
 <style>
+/* Carolines Vorstellungsbereich */
+.author-section { padding: clamp(2rem, 5vw, 4rem) 6vw; }
+.author-section > .author-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+.author-section .author-portrait { margin: 0; }
+.author-section .author-portrait img { display: block; width: 100%; height: auto; }
+.author-section .author-copy { min-width: 0; }
+@media (max-width: 700px) {
+  .author-section > .author-layout { grid-template-columns: minmax(0, 1fr); }
+}
+
 .instance-family {
   padding: clamp(3rem, 7vw, 6rem) 6vw;
   border-top: 1px solid var(--line);
